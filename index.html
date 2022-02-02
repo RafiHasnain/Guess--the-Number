@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<form id="modeForm" style="display:none; padding-top:20px">
+    <input type="radio" id="mode-dark" name="mode"value="Mode-Dark" onclick="darkMode(), darkModeGuesses(), darkModeInput(), darkModeHint()" >
+    <label for="mode-dark">Mode-Dark</label>
+    <input type="radio" id="mode-light" name="mode" value="Mode-Light" checked onclick="lightMode(), lightModeGuesses(), lightModeInput(),lightModeHint()">
+    <label for="mode-light">Mode-Light</label>
+</form>
+
+<h2 style="padding-top:5vh">I am thinking of a number between</h2>
+<h1>1 and 10</h1>
+<h2>You have 4 guesses</h2>
+<h2>Can you figure out what it is?</h2>
+
+<p>We have selected a random number between 1 - 10.
+See if you can guess it.</p>
+<div class="UserName" id="startGame">
+    <div class="uname">
+        
+        <input type = "text" id = "uName" class = "userName" placeholder="Enter Your Name">
+        <input type = "submit" value = "Start Game"
+            class = "submitUser" id = "submitUserName" onclick="startGame(), document.getElementById(
+             'uName').value = ''">
+    </div>
+
+</div>
+<div id="fireworkAnimation" style="display:none" >
+    <div class="firework" id="firework1">
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+    </div>
+    <div class="firework" id="firework2">
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+    </div>
+    <div class="firework" id="firework3">
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+    </div>
+</div>
+
+    <h3 id ="userName"></h3>
+
+    <h2 id="gameOver"></h2>
+    <p id="CGuess"></p>
+   
+    
+<div id="playAgain" style="display:none; background-color: transparent">
+    <button onclick="playAgain()">Play Again</button>
+    <button onClick="window.location.reload();">Enter new name and play again</button>
+</div>
+    
+<div class= "content" id="gameBoxes" style="display:none">
+    <div class= "guesses" id="guessDiv">
+        <h1 >Guesses</h1>
+        <h2 id="guess"></h2>
+    </div>
+    <div class="inputValue" id="inputDiv">
+        <div class="form" >
+            
+            <input type = "text" id = "guessField" class = "gField" placeholder="Type Your guess Here!" style=" border-radius: 5px;
+            background-color: #f2f2f2;
+            width: 90%;
+            padding: 10px;">
+            <input type = "submit" value = "Guess"
+                class = "guessSubmit" id = "submitGuess"   >
+        </div>
+        <p>Your Guess is: <em id="uGuess"></em></p>
+    </div>
+    <div class="hint" id="hintDiv">
+        <h1 >Hint</h1>
+        <h2 id="hint">Too smart for hints</h2>
+       
+    </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>					
